@@ -1,0 +1,100 @@
+
+my-ai-projects/
+└── gauge_monitor/                  ← Create this folder
+    ├── config.yaml                 ← Settings file
+    ├── main.py                     ← The master real-time loop
+    ├── simulator.py                ← Fake needle data (used until camera arrives)
+    ├── translator.py               ← Core translator module
+    ├── calibration/
+    │   ├── mapper.py               ← Calibration logic + map loading
+    │   └── train_calibration.py    ← One-time calibration script
+    ├── decision_brain/
+    │   ├── model.py                ← PyTorch model definition (LSTM/Transformer)
+    │   ├── train.py                ← Training script
+    │   └── inference.py            ← Fast inference wrapper
+    ├── gui/
+    │   └── dashboard.py            ← Live GUI (Streamlit)
+    ├── models/                     ← Auto-created: .pth and .pkl files go here
+    ├── data/                       ← Auto-created: synthetic + real training data
+    └── utils.py                    ← Helper functions
+
+
+
+**gauge_monitor Project - File List**
+
+File: config.yaml  
+Language: YAML  
+Purpose: Store all settings and parameters  
+Key libraries: PyYAML  
+Created with: VS Code
+
+File: simulator.py  
+Language: Python 3.12  
+Purpose: Generate realistic fake needle data for testing  
+Key libraries: numpy, random  
+Created with: VS Code
+
+File: translator.py  
+Language: Python 3.12  
+Purpose: Convert raw events into clean needle values + history  
+Key libraries: numpy, pickle  
+Created with: VS Code
+
+File: calibration/mapper.py  
+Language: Python 3.12  
+Purpose: Load and apply calibration map  
+Key libraries: pickle, numpy  
+Created with: VS Code
+
+File: calibration/train_calibration.py  
+Language: Python 3.12  
+Purpose: Run one-time calibration process  
+Key libraries: opencv-python, torch, numpy  
+Created with: VS Code  
+Run with: Anaconda Prompt
+
+File: decision_brain/model.py  
+Language: Python 3.12  
+Purpose: Define neural network architecture  
+Key libraries: torch.nn  
+Created with: VS Code
+
+File: decision_brain/train.py  
+Language: Python 3.12  
+Purpose: Train the Decision Brain model  
+Key libraries: torch, pandas, numpy, tqdm  
+Created with: VS Code  
+Run with: Anaconda Prompt
+
+File: decision_brain/inference.py  
+Language: Python 3.12  
+Purpose: Fast model inference wrapper  
+Key libraries: torch  
+Created with: VS Code
+
+File: gui/dashboard.py  
+Language: Python 3.12  
+Purpose: Real-time user interface and visualization  
+Key libraries: streamlit, plotly  
+Created with: VS Code  
+Run with: Anaconda Prompt
+
+File: utils.py  
+Language: Python 3.12  
+Purpose: Shared helper functions  
+Key libraries: torch, numpy, pandas, datetime  
+Created with: VS Code
+
+File: main.py  
+Language: Python 3.12  
+Purpose: Main real-time execution loop  
+Key libraries: All modules above  
+Created with: VS Code  
+Run with: Anaconda Prompt
+
+**Before creating files**  
+Run in Anaconda Prompt (once):  
+`cd Desktop\my-ai-projects`  
+`mkdir gauge_monitor`  
+`cd gauge_monitor`  
+`mkdir calibration decision_brain gui models data`

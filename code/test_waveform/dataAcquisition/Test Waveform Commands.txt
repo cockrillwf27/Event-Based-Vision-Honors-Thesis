@@ -1,0 +1,21 @@
+Test Waveform Commands
+From windows terminal
+
+Path: PS C:\Users\wfcoc\OneDrive\Desktop\test_Waveform> 
+
+python load_33220a.py  
+
+
+# Start
+
+python -c "import pyvisa; i=pyvisa.ResourceManager().open_resource('USB0::0x0957::0x0407::MY43005577::0::INSTR'); i.write('OUTP ON'); i.close()"
+
+
+# Stop
+
+python -c "import pyvisa; i=pyvisa.ResourceManager().open_resource('USB0::0x0957::0x0407::MY43005577::0::INSTR'); i.write('OUTP OFF'); i.close()"
+
+
+# Restart
+
+python -c "import pyvisa; i=pyvisa.ResourceManager().open_resource('USB0::0x0957::0x0407::MY43005577::0::INSTR'); i.write('FUNC USER'); i.write('OUTP OFF'); i.write('OUTP ON'); i.close()"
